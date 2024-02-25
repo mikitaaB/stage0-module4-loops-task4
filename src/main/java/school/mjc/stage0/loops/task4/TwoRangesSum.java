@@ -5,13 +5,22 @@ public class TwoRangesSum {
         int result =0;
         if (numberToSkip > lastInRow) {
             System.out.println("number to skip is bugger then the last");
-        } else if (numberToSkip < 0 && lastInRow < 0) {
+        } else if (lastInRow < 0) {
             System.out.println("last number in row is negative");
         } else {
-            for (int i = 0; i <= numberToSkip; i++){
-                result += i;
+            int skippedSum = 0;
+            int countedSum = 0;
+
+            for (int i = 1; i <= lastInRow; i++) {
+                if (i == numberToSkip) {
+                    skippedSum += i;
+                } else {
+                    countedSum += i;
+                }
             }
-            System.out.println(result);
+
+            System.out.println("skipped sum is number " + skippedSum);
+            System.out.println("counted sum is number " + countedSum);
         }
     }
 }
